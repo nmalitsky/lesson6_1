@@ -1,4 +1,3 @@
-const utils = require('./utils');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -77,7 +76,7 @@ routerAPIv1.route('/users')
 			if(err) {
 				res.status(400).send(err);
 			} else {
-		       		res.json({ message: 'All users are deleted' });
+		       		res.status(200).json({ message: 'All users are deleted' });
 			}
 		});
 	});
@@ -123,7 +122,7 @@ routerAPIv1.route('/users/:user_id')
 			if(err) {
 				res.status(400).send(err);
 			} else {
-		       		res.json({ message: 'User deleted' });
+		       		res.status(200).json({ message: 'User deleted' });
 			}
 		});
 	});
