@@ -55,7 +55,7 @@ routerAPIv1.route('/users')
 				// offset & limit
 				let offset = parseInt(req.query.offset || 0); 
 				let limit = parseInt(req.query.limit || count);
-				let fields = (req.query.fields || '').split(',').join(' ');
+				let fields = (req.query.fields || '').replace(/,/g, ' ');
 
 			        User.find({}, fields, (err, users) => {
 					if(err) {
